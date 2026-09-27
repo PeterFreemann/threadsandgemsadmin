@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-espresso: #2C1810;
+  --color-espresso-soft: #45291d;
+  --color-gold: #C9A84C;
+  --color-gold-deep: #9C7F2E;
+  --color-gold-wash: #F6EFD9;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: #F5F5F4;
+  color: #1c1917;
+}
+
+/* The one decorative element: an Ankara-style diamond band in brand gold */
+.ankara-band {
+  height: 10px;
+  background:
+    linear-gradient(135deg, var(--color-gold) 25%, transparent 25%) -5px 0 / 10px 10px,
+    linear-gradient(225deg, var(--color-gold) 25%, transparent 25%) -5px 0 / 10px 10px,
+    linear-gradient(315deg, var(--color-gold) 25%, transparent 25%) 0 0 / 10px 10px,
+    linear-gradient(45deg, var(--color-gold) 25%, transparent 25%) 0 0 / 10px 10px;
+  opacity: 0.85;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #d6d3d1;
+  background: #fff;
+  border-radius: 6px;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.9rem;
+}
+.field:focus { border-color: var(--color-gold); outline: none; box-shadow: 0 0 0 3px rgb(201 168 76 / 0.2); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
